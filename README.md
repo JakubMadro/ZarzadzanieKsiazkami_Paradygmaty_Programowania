@@ -30,9 +30,9 @@ Dane są przechowywane w pliku CSV, co pozwala na łatwe importowanie i eksporto
 
 1. Sklonuj repozytorium na swój komputer:
    ```bash
-   git clone https://github.com/username/ZarzadzanieKsiazkami.git
+   git clone https://github.com/JakubMadro/ZarzadzanieKsiazkami_Paradygmaty_Programowania.git
 
    cd ZarzadzanieKsiazkami
 
-python main.py
+   python main.py
 
