@@ -11,12 +11,12 @@ Projekt aplikacji do zarządzania kolekcją książek, który umożliwia dodawan
 
 ## Opis projektu
 
-Aplikacja umożliwia zarządzanie kolekcją książek poprzez prosty interfejs w terminalu. Użytkownik może:
+Aplikacja umożliwia zarządzanie kolekcją książek poprzez prosty interfejs. Użytkownik może:
 
 - Dodawać nowe książki do bazy danych.
 - Wyświetlać wszystkie książki w kolekcji.
 - Usuwać książki z bazy na podstawie wieku (rok wydania).
-- Aktualizować informacje o wynagrodzeniu (np. status dostępności).
+- Aktualizować informacje (np. status dostępności).
 
 Dane są przechowywane w pliku CSV, co pozwala na łatwe importowanie i eksportowanie danych.
 
