@@ -7,7 +7,7 @@ from library_manager import LibraryManager
 class LibraryApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Zarządzanie Biblioteką")
+        self.root.title("Zarządzanie Książkami")
         self.manager = LibraryManager(filename="booksDB.csv")  # Użycie istniejącej klasy LibraryManager
 
         style = ttk.Style()
