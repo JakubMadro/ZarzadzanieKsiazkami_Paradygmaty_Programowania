@@ -8,8 +8,6 @@ Projekt aplikacji do zarządzania kolekcją książek, który umożliwia dodawan
 - [Technologie](#technologie)
 - [Wymagania]()
 - [Instalacja](#instalacja)
-- [Użycie](#użycie)
-- [Struktura projektu](#struktura-projektu)
 
 ## Opis projektu
 
