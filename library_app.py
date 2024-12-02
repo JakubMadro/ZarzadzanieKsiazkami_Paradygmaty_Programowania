@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk, messagebox, filedialog
 from library_manager import LibraryManager
 
 
@@ -9,6 +9,9 @@ class LibraryApp:
         self.root = root
         self.root.title("Zarządzanie Biblioteką")
         self.manager = LibraryManager(filename="booksDB.csv")  # Użycie istniejącej klasy LibraryManager
+
+        style = ttk.Style()
+        style.theme_use("clam")
 
         # Lista książek (Treeview)
         self.tree = ttk.Treeview(root, columns=("Tytuł", "Autor", "Rok", "Dostępność"), show="headings")
@@ -30,6 +33,9 @@ class LibraryApp:
 
         # Załaduj istniejące książki
         self.load_books()
+
+        #zamknięcie okna
+        self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def load_books(self):
         for book in self.manager.books:
@@ -105,15 +111,38 @@ class LibraryApp:
                     break
 
     def export_books(self):
-        """Eksportuje książki do CSV"""
-        self.manager.export_to_csv()
-        messagebox.showinfo("Sukces", "Dane zostały zapisane do pliku CSV!")
+        """Eksportuje książki do wybranego pliku CSV"""
+        filename = filedialog.asksaveasfilename(
+            title="Wybierz plik do zapisu",
+            defaultextension=".csv",
+            filetypes=(("Pliki CSV", "*.csv"), ("Wszystkie pliki", "*.*"))
+        )
+        if filename:
+            self.manager.filename = filename
+            self.manager.export_to_csv()
+            messagebox.showinfo("Sukces", f"Dane zostały zapisane do pliku '{filename}'.")
+        else:
+            messagebox.showinfo("Anulowano", "Eksport został anulowany.")
 
     def import_books(self):
-        """Importuje książki z CSV"""
-        self.manager.import_from_csv()
-        self.tree.delete(*self.tree.get_children())
-        self.load_books()
+        """Importuje książki z wybranego pliku CSV"""
+        filename = filedialog.askopenfilename(
+            title="Wybierz plik do importu",
+            filetypes=(("Pliki CSV", "*.csv"), ("Wszystkie pliki", "*.*"))
+        )
+        if filename:
+            self.manager.filename = filename
+            self.manager.import_from_csv()
+            self.tree.delete(*self.tree.get_children())
+            self.load_books()
+            messagebox.showinfo("Sukces", f"Dane zostały zaimportowane z pliku '{filename}'.")
+        else:
+            messagebox.showinfo("Anulowano", "Import został anulowany.")
+
+    def on_closing(self):
+        """Obsługa zamykania aplikacji - automatyczny zapis"""
+        self.manager.export_to_csv()  # Zapisz dane do domyślnego pliku
+        self.root.destroy()  # Zamknij aplikację
 
 
 if __name__ == "__main__":
