@@ -41,9 +41,13 @@ Aby sprawdzic czy posiadasz pythona na swoim komputerze, użyj polecenia
 1. Sklonuj repozytorium na swój komputer:
    ```bash
    git clone https://github.com/JakubMadro/ZarzadzanieKsiazkami_Paradygmaty_Programowania.git
-
+   ```
+2. Przejdz do folderu z pobranym repozytorium
+   ```bash
    cd ZarzadzanieKsiazkami_Paradygmaty_Programowania
-
+   ```
+3. Uruchom plik main.py
+   ```bash
    python main.py
    ```
 
