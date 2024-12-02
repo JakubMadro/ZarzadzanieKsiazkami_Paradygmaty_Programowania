@@ -32,7 +32,7 @@ Dane są przechowywane w pliku CSV, co pozwala na łatwe importowanie i eksporto
    ```bash
    git clone https://github.com/JakubMadro/ZarzadzanieKsiazkami_Paradygmaty_Programowania.git
 
-   cd ZarzadzanieKsiazkami
+   cd ZarzadzanieKsiazkami_Paradygmaty_Programowania
 
    python main.py
 
