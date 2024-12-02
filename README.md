@@ -6,9 +6,11 @@ Projekt aplikacji do zarządzania kolekcją książek, który umożliwia dodawan
 
 - [Opis projektu](#opis-projektu)
 - [Technologie](#technologie)
+- [Wymagania]()
 - [Instalacja](#instalacja)
 - [Użycie](#użycie)
 - [Struktura projektu](#struktura-projektu)
+
 ## Opis projektu
 
 Aplikacja umożliwia zarządzanie kolekcją książek poprzez prosty interfejs w terminalu. Użytkownik może:
@@ -26,6 +28,16 @@ Dane są przechowywane w pliku CSV, co pozwala na łatwe importowanie i eksporto
 - CSV do przechowywania danych
 - Obsługa błędów i walidacja danych
 
+## Wymagania
+
+Python w wersji 3.x 
+
+Aby sprawdzic czy posiadasz pythona na swoim komputerze, użyj polecenia 
+
+   ```bash
+   pyhon --version
+   ```
+
 ## Instalacja
 
 1. Sklonuj repozytorium na swój komputer:
@@ -35,4 +47,5 @@ Dane są przechowywane w pliku CSV, co pozwala na łatwe importowanie i eksporto
    cd ZarzadzanieKsiazkami_Paradygmaty_Programowania
 
    python main.py
+   ```
 
