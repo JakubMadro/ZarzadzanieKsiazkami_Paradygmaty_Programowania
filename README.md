@@ -35,7 +35,7 @@ Python w wersji 3.x
 Aby sprawdzic czy posiadasz pythona na swoim komputerze, użyj polecenia 
 
    ```bash
-   pyhon --version
+   python --version
    ```
 
 ## Instalacja
